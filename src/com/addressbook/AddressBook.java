@@ -1,11 +1,17 @@
 package com.addressbook;
+import java.util.Scanner;
+import java.util.ArrayList;
 
+/**
+ * Here i have imported Scanner to take user input.
+ * imported ArrayList to store the values in an ArrayList.
+ */
 public class AddressBook {
-	public final String firstname, lastname;
-    public final String address, city, state;
-    public final String zip;
-    public final String phoneNumber;
-    public final String email;
+    public String firstname, lastname;
+    public String address, city, state;
+    public int zip;
+    public long phoneNumber;
+    public String email;
 
     /**
      * This is a parameterized constructor having the given parameters.
@@ -18,7 +24,7 @@ public class AddressBook {
      * @param phonenumber
      * @param email
      */
-    public AddressBook(String firstname, String lastname, String address, String city, String state, String zip, String phonenumber, String email) {
+    public AddressBook(String firstname, String lastname, String address, String city, String state, int zip, long phonenumber, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;
@@ -30,24 +36,55 @@ public class AddressBook {
     }
 
     /**
-     * This printContactDetails method will print all the values given below.
+     * these get methods are used to get the values according to the user input.
+     * @return
      */
-    public void printContactDetails() {
-        System.out.println("Firstname : " + firstname);
-        System.out.println("Lastname : " + lastname);
-        System.out.println("Address : " + address);
-        System.out.println("City : " + city);
-        System.out.println("State : " + state);
-        System.out.println("Zip : " + zip);
-        System.out.println("PhoneNumber : " + phoneNumber);
-        System.out.println("Email : " + email);
+    public String getFirstName() {
+        return firstname;
     }
-/**
- * Here i have putted parameters for constructor to get output.
- */
-    public static void main(String[]args) {
-        System.out.println("Wellcome to Address Book Program!");
-                AddressBook contact = new AddressBook("Amit Ranjan", "Pradhan", "Narsinghpur", "Cuttack", "Odisha", "754032", "6371912511", "amitranjanpradhan456@gmail.com");
-                contact.printContactDetails();
+    public void setFirstName(String firstName) {
+        this.firstname = firstName;
+    }
+    public String getLastName() {
+        return lastname;
+    }
+    public void setLastName(String lastName) {
+        this.lastname = lastName;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public String getCity() {
+        return city;
+    }
+    public void setCity(String city) {
+        this.city = city;
+    }
+    public String getState() {
+        return state;
+    }
+    public void setState(String state) {
+        this.state = state;
+    }
+    public int getZip() {
+        return zip;
+    }
+    public void setZip(int zip) {
+        this.zip = zip;
+    }
+    public long getPhoneNo() {
+        return phoneNumber;
+    }
+    public void setPhoneNo(long phno) {
+        this.phoneNumber = phno;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
