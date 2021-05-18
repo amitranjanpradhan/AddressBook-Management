@@ -1,4 +1,6 @@
 package com.addressbook;
+import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * Here i have imported Scanner to take user input.
@@ -84,5 +86,60 @@ public class AddressBook {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    /**
+     * Here i have written the code for editcontact.
+     * Accodring to the call from main class it will work.
+     */
+    public void editContact() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Edit Firstname : ");
+        String firstname = sc.nextLine();
+        setFirstName(firstname);
+
+        System.out.println("Edit Lastname : ");
+        String lastname = sc.nextLine();
+        setLastName(lastname);
+
+        System.out.println("Edit Address : ");
+        String address = sc.nextLine();
+        setAddress(address);
+
+        System.out.println("Edit City : ");
+        String city = sc.nextLine();
+        setCity(city);
+
+        System.out.println("Edit State : ");
+        String state = sc.nextLine();
+        setState(state);
+
+        System.out.println("Edit Zip : ");
+        int zip = sc.nextInt();
+        setZip(zip);
+
+        System.out.println("Edit PhoneNumber : ");
+        long phonenumber = sc.nextLong();
+        sc.nextLine();
+        setPhoneNo(phonenumber);
+
+        System.out.println("Edit Email : ");
+        String email = sc.nextLine();
+        setEmail(email);
+    }
+
+    /**
+     * This method will display the data of the addressbook.
+     */
+    public void printContactDetails() {
+        System.out.println("Firstname : " + getFirstName());
+        System.out.println("Lastname : " + getLastName());
+        System.out.println("Address : " + getAddress());
+        System.out.println("City : " + getCity());
+        System.out.println("State : " + getState());
+        System.out.println("Zip : " + getZip());
+        System.out.println("PhoneNumber : " + getPhoneNo());
+        System.out.println("Email : " + getEmail());
+
     }
 }
