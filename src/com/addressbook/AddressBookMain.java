@@ -8,6 +8,9 @@ public class AddressBookMain {
     public static void main(String args[]) {
         Scanner scan = new Scanner(System.in);
         AddressBookArray addressObject = new AddressBookArray();
+        /**
+         * To add more contacts user's Choice should be 'Y' and Switchchoice should be 1.
+         */
         String choice = "y";
         System.out.println("Welcome to Address Book Program!");
         while(true) {
