@@ -60,6 +60,23 @@ public class AddressBookArray {
     }
 
     /**
+     * Here i have added delete method which will delete the data comparing to the firstname.
+     * @param nameToDelete
+     */
+    public void delete(String nameToDelete) {
+        int i=0;
+        for(i=0;i<contactList.size();i++) {
+            if(contactList.get(i).firstname.equals(nameToDelete)) {
+                contactList.remove(i);
+                System.out.println("Contact is Deleted");
+            }
+            else {
+                System.out.println("Contact not found!");
+            }
+        }
+    }
+
+    /**
      * This printContactDetails will print all the information after data got edited.
      */
     public void printContactDetails() {
