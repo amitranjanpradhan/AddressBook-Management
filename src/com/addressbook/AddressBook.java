@@ -1,6 +1,4 @@
 package com.addressbook;
-import java.util.Scanner;
-import java.util.ArrayList;
 
 /**
  * Here i have imported Scanner to take user input.
