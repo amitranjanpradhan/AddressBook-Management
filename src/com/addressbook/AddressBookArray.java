@@ -3,6 +3,7 @@ package com.addressbook;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  * Added AddressbookArray class to add an arraylist code in it.
@@ -111,4 +112,30 @@ public class AddressBookArray {
             }
         }
     }
+
+    /**
+     * In this method i have used stream to filter all the persons according to city.
+     * Store in a list named personList.
+     * @param city
+     */
+    public void searchPersonByCity(String city) {
+        List<AddressBook> personList = contact.stream().filter(person1 -> person1.getCity().equalsIgnoreCase(city)).collect(Collectors.toList());
+        for(AddressBook contacts: personList){
+            System.out.println("Name: "+contacts.getFirstName()+" "+contacts.getLastName());
+        }
+    }
+
+    /**
+     * This method i have used to find all persons according to state.
+     * store in a list named personList.
+     * @param state
+     */
+    public void searchPersonByState(String state) {
+        List<AddressBook> personList = contact.stream().filter(person1 -> person1.getState().equalsIgnoreCase(state)).collect(Collectors.toList());
+        for(AddressBook contacts: personList){
+            System.out.println("Name: "+contacts.getFirstName()+" "+contacts.getLastName());
+        }
+    }
+
+
 }

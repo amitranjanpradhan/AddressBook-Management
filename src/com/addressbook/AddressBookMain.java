@@ -14,8 +14,12 @@ public class AddressBookMain {
          * According to the options it'll call the method.
          */
         while(result) {
-            System.out.println("Enter option to make changes : \n[press 1 to add new Contact" +
-                    "\n press 2 to Edit existing contacts" +"\n press 3 to delete a contact detail " + "\n press 0 to quit ]");
+            System.out.println("Enter option to make changes : \n[*press 1 to add new Contact."
+                                                                +"\n*press 2 to Edit existing contacts."
+                                                                +"\n*press 3 to delete a contact detail."
+                                                                +"\n*press 4 to search by city."
+                                                                +"\n*press 5 to search by State."
+                                                                + "\n*press 0 to quit ]");
             int option = input.nextInt();
             switch (option) {
                 case 1 :
@@ -30,6 +34,16 @@ public class AddressBookMain {
                     System.out.println("Enter your Firstname to delete your details :");
                     String firstName = input.next();
                     addressBook.deleteContact(firstName);
+                    break;
+                case 4:
+                    System.out.println("Enter your City name to search Person details: ");
+                    String city=input.next();
+                    addressBook.searchPersonByCity(city);
+                    break;
+                case 5:
+                    System.out.println("Enter your State name to search person details: ");
+                    String state=input.next();
+                    addressBook.searchPersonByState(state);
                     break;
                 default:
                     result = false;
