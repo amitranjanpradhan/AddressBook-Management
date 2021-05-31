@@ -2,7 +2,7 @@ package com.addressbook;
 import java.util.*;
 
 public class AddressBookImplement implements MultipleAddressBook {
-    public Map<String, ArrayList<AddressBook>> book;
+	public Map<String, ArrayList<AddressBook>> book;
     public Map<String, ArrayList<AddressBook>> multibook;
     public Map<String, ArrayList<AddressBook>> city;
     public Map<String, ArrayList<AddressBook>> state;
@@ -159,7 +159,7 @@ public class AddressBookImplement implements MultipleAddressBook {
      */
     public boolean makechoice() {
         System.out.println("enter \n1:add_contact \n2:view_by_city \n3:view_by_state \n4:edit_contact \n5:delete_contact" +
-                " \n6:person_by_city_or_state \n7:Get_NoOfContacts \n0: Quit");
+                " \n6:person_by_city_or_state \n7:Get_NoOfContacts \n8:Sort Alphabetically \n0: Quit");
         int check = obj.nextInt();
         boolean conditon = true;
         switch (check) {
@@ -183,6 +183,9 @@ public class AddressBookImplement implements MultipleAddressBook {
                 break;
             case 7:
                 getCountOfPersons();
+                break;
+            case 8:
+                sortAlphabetically();
                 break;
             case 0:
                 conditon = false;
@@ -243,5 +246,13 @@ public class AddressBookImplement implements MultipleAddressBook {
      */
     private void getCountOfPersons() {
         System.out.println("total count is " + count);
+    }
+    /**
+     * this method will sort the contacts alphabetically.
+     */
+    public void sortAlphabetically() {
+        book.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEach(System.out::println);
     }
 }
