@@ -6,6 +6,7 @@ public class AddressBookImplement implements MultipleAddressBook {
     public Map<String, ArrayList<AddressBook>> multibook;
     public Map<String, ArrayList<AddressBook>> city;
     public Map<String, ArrayList<AddressBook>> state;
+    public Map<Integer, ArrayList<AddressBook>> zip;
     public ArrayList<AddressBook> entries;
     public int count = 0;
     Scanner obj = new Scanner(System.in);
@@ -17,6 +18,7 @@ public class AddressBookImplement implements MultipleAddressBook {
         multibook = new HashMap<>();
         city = new HashMap<>();
         state = new HashMap<>();
+        zip = new HashMap<>();
         entries = new ArrayList<>();
     }
     @Override
@@ -28,6 +30,7 @@ public class AddressBookImplement implements MultipleAddressBook {
         multibook.put(BookName, entries);
         city.put(City, entries);
         state.put(State, entries);
+        zip.put(Zip, entries);
         count++;
     }
     /**
@@ -254,5 +257,30 @@ public class AddressBookImplement implements MultipleAddressBook {
         book.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
                 .forEach(System.out::println);
+    }
+    /**
+     * this method will take user input as city or state or zipcode.
+     * according to the input it'll sort the order.
+     */
+    public void sortCityStateOrZip() {
+        System.out.println("sort by 1:city \n2:state \n3:zip");
+        int check = obj.nextInt();
+        switch (check) {
+            case 1:
+                city.entrySet().stream()
+                        .sorted(Map.Entry.comparingByKey())
+                        .forEach(System.out::println);
+                break;
+            case 2:
+                state.entrySet().stream()
+                        .sorted(Map.Entry.comparingByKey())
+                        .forEach(System.out::println);
+                break;
+            case 3:
+                zip.entrySet().stream()
+                        .sorted(Map.Entry.comparingByKey())
+                        .forEach(System.out::println);
+                break;
+        }
     }
 }
