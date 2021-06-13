@@ -11,4 +11,6 @@ public interface MultipleAddressBook {
     public void editContact();
     public void deleteEntry();
     public boolean makechoice();
+    public void writeAddressBookInFiles(AddressBookImplement.IOService ioService);
+    public void readAddressBookInFiles(AddressBookImplement.IOService ioService);
 }
